@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Nodlyn.CustomComponent</RootNamespace>
+
+    <!-- Package metadata (used if you publish to NuGet) -->
+    <Authors>Nodlyn</Authors>
+    <Company>Nodlyn</Company>
+    <Product>Nodlyn Custom Component</Product>
+    <Description>A custom workflow component plugin for the Nodlyn automation platform.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/nodlyn/nodlyn-custom-component</RepositoryUrl>
+  </PropertyGroup>
+
+  <!--
+    Reference the Nodlyn.Core project to access the plugin contract types:
+      - DeviceConnectorDefinition
+      - CapabilityExecutor
+      - CapabilityContract
+      - StepOutcome
+      - NodeInstance, DeviceInstance, ExecutionContext
+
+    IMPORTANT: Your plugin must only reference Nodlyn.Core.
+    Do NOT reference Nodlyn.Api or Nodlyn.Connectors.
+
+    NOTE: This path assumes the plugin repo is cloned inside the Nodlyn
+    source tree (e.g. as a sibling of Nodlyn.Api/). If you want to
+    develop independently, replace this ProjectReference with:
+
+      <PackageReference Include="Nodlyn.Core" Version="1.*" />
+
+    once the Nodlyn SDK NuGet package is available.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Nodlyn.Core\Nodlyn.Core.csproj" />
+  </ItemGroup>
+
+</Project>
